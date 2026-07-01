@@ -1,7 +1,6 @@
 # StoryLine
 
-Run this Lakebed capsule:
+AI news sorted on a timeline
 
-```sh
-pnpm lakebed dev StoryLine
-```
+Powered by LakeBed
+
