@@ -1126,6 +1126,41 @@ export const curatedTimelineData: TimelineData = {
       track: "restrictions",
       tracks: ["restrictions", "anthropic"],
       links: [{ label: "Anthropic", url: "https://www.anthropic.com/news/redeploying-fable-5" }]
+    },
+    {
+      id: "grok-4-5-2026-07-08",
+      date: "2026-07-08",
+      title: "xAI Launches Grok 4.5",
+      description: "xAI releases Grok 4.5 for coding, agentic tasks, and knowledge work. It is available in Grok Build, Cursor, and the xAI API, with EU availability expected later in July.",
+      track: "xai",
+      links: [{ label: "xAI", url: "https://x.ai/news/grok-4-5" }]
+    },
+    {
+      id: "claude-fable-5-access-extension-2026-07-07",
+      date: "2026-07-07",
+      title: "Anthropic Extends Claude Fable 5 Included Access",
+      description: "Anthropic extends included Claude Fable 5 access for paid-plan users through July 12, up to 50% of their weekly usage limits. After the extension, additional Fable 5 usage requires usage credits.",
+      track: "anthropic",
+      links: [{ label: "Anthropic on X", url: "https://x.com/AnthropicAI" }]
+    },
+    {
+      id: "gpt-live-1-2026-07-08",
+      date: "2026-07-08",
+      title: "OpenAI Launches GPT-Live-1",
+      description: "OpenAI launches GPT-Live-1 and GPT-Live-1 mini as a new full-duplex voice experience for ChatGPT. The models can listen and speak continuously, making interruptions and turn-taking feel more natural; GPT-Live-1 serves paid users and the mini model serves Free users.",
+      track: "openai",
+      links: [{ label: "OpenAI", url: "https://openai.com/index/introducing-gpt-live/" }]
+    },
+    {
+      id: "gpt-5-6-general-availability-2026-07-09",
+      date: "2026-07-09",
+      title: "OpenAI Launches GPT-5.6 and ChatGPT Work",
+      description: "OpenAI makes the GPT-5.6 family generally available: Sol as the flagship tier, Terra for everyday work, and Luna as the fastest, most affordable tier. The rollout begins across ChatGPT, Codex, and the API alongside ChatGPT Work, a GPT-5.6-powered agent for long-running work across connected apps, files, web, mobile, and desktop. The updated desktop app brings Chat, Work, and Codex together in one place.",
+      track: "openai",
+      links: [
+        { label: "GPT-5.6 release", url: "https://openai.com/index/gpt-5-6/" },
+        { label: "ChatGPT Work", url: "https://openai.com/index/chatgpt-for-your-most-ambitious-work/" }
+      ]
     }
   ]
 };

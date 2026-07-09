@@ -26,6 +26,19 @@ let timelineWidth = 3200;
 const emptyTimeline: TimelineData = { tracks: [], events: [] };
 const emptyAdminQueue: AdminQueue = { isAdmin: false, pending: [] };
 
+function applyAppSurface() {
+  if (typeof document === "undefined") {
+    return;
+  }
+
+  // The browser can reveal the document background during touch/momentum
+  // overscroll, so keep the root surface aligned with the app shell.
+  document.documentElement.style.backgroundColor = "#09090b";
+  document.documentElement.style.overscrollBehavior = "none";
+  document.body.style.backgroundColor = "#09090b";
+  document.body.style.overscrollBehavior = "none";
+}
+
 function dedupeEvents(list: TimelineEvent[]): TimelineEvent[] {
   const seen = new Set<string>();
   return list.filter((event) => {
@@ -609,6 +622,8 @@ function MonthGridlines() {
 }
 
 export function App() {
+  applyAppSurface();
+
   const auth = useAuth();
   const timeline = useQuery<TimelineData>("timeline") ?? emptyTimeline;
   const adminQueue = useQuery<AdminQueue>("adminQueue") ?? emptyAdminQueue;
@@ -618,7 +633,7 @@ export function App() {
   setTimelineData(timeline);
 
   return (
-    <main className="flex h-dvh flex-col overflow-hidden bg-zinc-950 text-zinc-300 antialiased [font-family:ui-sans-serif,system-ui,-apple-system,sans-serif]">
+    <main className="flex h-dvh min-h-dvh flex-col overflow-hidden overscroll-none bg-zinc-950 text-zinc-300 antialiased [font-family:ui-sans-serif,system-ui,-apple-system,sans-serif]">
       <header className="z-50 border-b border-zinc-900">
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 px-5 py-3 lg:px-8">
           <h1 className="text-sm font-medium text-zinc-100">StoryLine</h1>
@@ -700,7 +715,7 @@ export function App() {
       </header>
 
       <section
-        className="min-h-0 flex-1 overflow-x-auto overflow-y-hidden px-5 lg:px-8"
+        className="min-h-0 flex-1 overflow-x-auto overflow-y-hidden overscroll-x-contain overscroll-y-none px-5 lg:px-8"
         data-timeline-scroll="true"
         ref={(element) => scrollTimelineToEnd(element)}
       >
